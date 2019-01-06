@@ -226,65 +226,26 @@ git commit -m 'configuration for IOS and Android react-native-navigation'
 There is a starter kit with same version of react native, and alrady rolled in version of sagas, jest, and RN Elements.  Exactly what I want, so bailed on home roll
 [RN Navigation starter kit](https://github.com/wagng/react-native-navigation-redux-starter-kit)
 
-```bash
-git clone git@github.com:wagng/react-native-navigation-redux-starter-kit.git
-```
-```result
-! Cloning into 'react-native-navigation-redux-starter-kit'...
-```
+- cloned into new app, and moved this file into it
 
-```bash
-cd react-native-navigation-redux-starter-kit
-rm -rf .git
-git init .
-git commit -am "Initial commit"
-```
-```result
-: Initialized empty Git repository in /Users/mclark/Projects/notch8/learn/classroom-app/react-native-navigation-redux-starter-kit/.git/
-: On branch master
-:
-: Initial commit
-:
-: Untracked files:
-: 	.buckconfig
-: 	.circleci/
-: 	.eslintignore
-: 	.eslintrc
-: 	.flowconfig
-: 	.gitattributes
-: 	.gitignore
-: 	.watchmanconfig
-: 	LICENSE
-: 	README.md
-: 	__mocks__/
-: 	android/
-: 	app.json
-: 	babel.config.js
-: 	index.js
-: 	ios/
-: 	jest-setup.js
-: 	logo.png
-: 	package.json
-: 	src/
-: 	yarn.lock
-:
-: nothing added to commit but untracked files present
-```
 ```bash
 ls
 ```
 ```result
-: LearnApp
+: LICENSE
+: README.md
+: __mocks__
+: android
+: app.json
+: babel.config.js
 : dev.org
-: mobile-app
-: react-native-navigation-redux-starter-kit
-: testing.org
-```
-
-```bash
-mv react-native-navigation-redux-starter-kit LearnApp
-mv dev.org LearnApp/
-cd LearnApp
+: index.js
+: ios
+: jest-setup.js
+: logo.png
+: package.json
+: src
+: yarn.lock
 ```
 
 ```bash
@@ -295,17 +256,370 @@ yarn
 : [1/4] Resolving packages...
 : [2/4] Fetching packages...
 : [3/4] Linking dependencies...
-! warning " > babel-jest@23.6.0" has unmet peer dependency "babel-core@^6.0.0 || ^7.0.0-0".
+! warning " > react-native-elements@0.19.1" has incorrect peer dependency "react-native-vector-icons@^4.2.0".
 : [4/4] Building fresh packages...
-: Done in 2.12s.
+! warning "babel-preset-react-native > @babel/plugin-proposal-class-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-object-rest-spread@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-optional-chaining@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-arrow-functions@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-block-scoping@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-classes@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-computed-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-destructuring@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-exponentiation-operator@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-flow-strip-types@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-for-of@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-function-name@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-literals@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-modules-commonjs@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-object-assign@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-parameters@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-display-name@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-jsx@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-jsx-source@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-regenerator@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-shorthand-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-spread@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-sticky-regex@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-template-literals@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-unicode-regex@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-class-properties > @babel/plugin-syntax-class-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-object-rest-spread > @babel/plugin-syntax-object-rest-spread@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-optional-chaining > @babel/plugin-syntax-optional-chaining@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-flow-strip-types > @babel/plugin-syntax-flow@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-jsx > @babel/plugin-syntax-jsx@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".Tes
 ```
 
+- Testing Android
+
+```bash
+yarn add @babel/plugin-proposal-decorators
+```
+```result
+: yarn add v1.12.3
+: [1/4] Resolving packages...
+: [2/4] Fetching packages...
+: [3/4] Linking dependencies...
+! warning " > react-native-elements@0.19.1" has incorrect peer dependency "react-native-vector-icons@^4.2.0".
+: [4/4] Building fresh packages...
+: success Saved lockfile.
+! warning "@babel/plugin-proposal-decorators" is already in "devDependencies". Please remove existing entry first before adding it to "dependencies".
+: success Saved 2 new dependencies.
+: info Direct dependencies
+: Done in 2.90s.
+: └─ @babel/plugin-proposal-decorators@7.2.3
+: info All dependencies
+: ├─ @babel/plugin-proposal-decorators@7.2.3
+: └─ @babel/plugin-syntax-decorators@7.2.0
+! warning "babel-preset-react-native > @babel/plugin-proposal-class-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-
+/plugin-proposal-object-rest-spread@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-optional-chaining@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-arrow-functions@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-block-scoping@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-classes@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-computed-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-destructuring@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-exponentiation-operator@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-flow-strip-types@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-for-of@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-function-name@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-literals@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-modules-commonjs@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-object-assign@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-parameters@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-display-name@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-jsx@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-jsx-source@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-regenerator@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-shorthand-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-spread@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-sticky-regex@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-template-literals@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-unicode-regex@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-class-properties > @babel/plugin-syntax-class-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-object-rest-spread > @babel/plugin-syntax-object-rest-spread@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-optional-chaining > @babel/plugin-syntax-optional-chaining@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-flow-strip-types > @babel/plugin-syntax-flow@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-jsx > @babel/plugin-syntax-jsx@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+```
+
+```bash
+yarn add @babel/plugin-syntax-export-namespace-from
+```
+```result
+: yarn add v1.12.3
+: [1/4] Resolving packages...
+: [2/4] Fetching packages...
+: [3/4] Linking dependencies...
+! warning " > react-native-elements@0.19.1" has incorrect peer dependency "react-native-vector-icons@^4.2.0".
+: [4/4] Building fresh packages...
+: success Saved lockfile.
+! warning "@babel/plugin-syntax-export-namespace-from" is already in "devDependencies". Please remove existing entry first before adding it to "dependencies".
+: success Saved 1 new dependency.
+: info Direct dependencies
+: └─ @babel/plugin-syntax-export-namespace-from@7.2.0
+: info All dependencies
+: └─ @babel/plugin-syntax-export-namespace-from@7.2.0
+: Done in 2.65s.
+! warning "babel-preset-react-native > @babel/plugin-proposal-class-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-object-rest-spread@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-optional-chaining@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-arrow-functions@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-block-scoping@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-classes@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-computed-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-destructuring@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-exponentiation-operator@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-flow-strip-types@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-for-of@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-function-name@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-literals@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-modules-commonjs@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-object-assign@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-parameters@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-display-name@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-jsx@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-jsx-source@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-regenerator@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-shorthand-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-spread@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-sticky-regex@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-template-literals@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-unicode-regex@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-class-properties > @babel/plugin-syntax-class-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-object-rest-spread > @babel/plugin-syntax-object-rest-spread@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-optional-chaining > @babel/plugin-syntax-optional-chaining@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-flow-strip-types > @babel/plugin-syntax-flow@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-jsx > @babel/plugin-syntax-jsx@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+```
+
+```bash
+yarn add @babel/plugin-proposal-decorators
+```
+```result
+: yarn add v1.12.3
+: [1/4] Resolving packages...
+: [2/4] Fetching packages...
+: [3/4] Linking dependencies...
+! warning " > react-native-elements@0.19.1" has incorrect peer dependency "react-native-vector-icons@^4.2.0".
+: [4/4] Building fresh packages...
+! warning "@babel/plugin-proposal-decorators" is already in "devDependencies". Please remove existing entry first before adding it to "dependencies".
+: success Saved 1 new dependency.
+: info Direct dependencies
+: └─ @babel/plugin-proposal-decorators@7.2.3
+: info All dependencies
+: └─ @babel/plugin-proposal-decorators@7.2.3
+: Done in 2.40s.
+! warning "babel-preset-react-native > @babel/plugin-proposal-class-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-object-rest-spread@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-optional-chaining@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-arrow-functions@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-block-scoping@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-classes@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-computed-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-destructuring@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-exponentiation-operator@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-flow-strip-types@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-for-of@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-function-name@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-literals@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-modules-commonjs@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-object-assign@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-parameters@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-display-name@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-jsx@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-jsx-source@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-regenerator@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-shorthand-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-spread@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-sticky-regex@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-template-literals@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-unicode-regex@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-class-properties > @babel/plugin-syntax-class-properties@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-object-rest-spread > @babel/plugin-syntax-object-rest-spread@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-proposal-optional-chaining > @babel/plugin-syntax-optional-chaining@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-flow-strip-types > @babel/plugin-syntax-flow@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+! warning "babel-preset-react-native > @babel/plugin-transform-react-jsx > @babel/plugin-syntax-jsx@7.0.0-beta.47" has incorrect peer dependency "@babel/core@7.0.0-beta.47".
+```
 ```bash
 cd ios && pod install
 ```
 ```result
-: [!] No `Podfile' found in the project directory.
+: Analyzing dependencies
+: Sending stats
+: Pod installation complete! There are 0 dependencies from the Podfile and 0 total pods installed.
 ```
 
-- Run Android to verify its running
-- Dir structure is a mess, my fault.  fixing
+```bash
+git status
+```
+```result
+: On branch master
+: Your branch is up to date with 'origin/master'.
+:
+: Changes not staged for commit:
+:   (use "git add <file>..." to update what will be committed)
+:   (use "git checkout -- <file>..." to discard changes in working directory)
+:
+: 	modified:   package.json
+: 	modified:   yarn.lock
+:
+: Untracked files:
+:   (use "git add <file>..." to include in what will be committed)
+:
+: 	dev.org
+:
+: no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+Still acting as though we've just checked out the starter kit.  Let's make it our own
+
+```bash
+rm -rf .git
+git init .
+git add .
+git commit -m "Initial commit, android and ios working with react-native-navigation starter kit"
+```
+```result
+: Initialized empty Git repository in /Users/mclark/Projects/notch8/learn/classroom-app/LearnApp/.git/
+: [master (root-commit) 0447cbe] Initial commit, android and ios working with react-native-navigation starter kit
+:  108 files changed, 13528 insertions(+)
+:  create mode 100644 .buckconfig
+:  create mode 100644 .circleci/config.yml
+:  create mode 100644 .eslintignore
+:  create mode 100644 .eslintrc
+:  create mode 100644 .flowconfig
+:  create mode 100644 .gitattributes
+:  create mode 100644 .gitignore
+:  create mode 100644 .watchmanconfig
+:  create mode 100755 LICENSE
+:  create mode 100644 README.md
+:  create mode 100644 __mocks__/index.js
+:  create mode 100644 __mocks__/react-native-navigation.js
+:  create mode 100644 android/app/BUCK
+:  create mode 100644 android/app/build.gradle
+:  create mode 100644 android/app/google-services.json
+:  create mode 100644 android/app/proguard-rules.pro
+:  create mode 100644 android/app/src/main/AndroidManifest.xml
+:  create mode 100644 android/app/src/main/assets/fonts/AntDesign.ttf
+:  create mode 100644 android/app/src/main/assets/fonts/Entypo.ttf
+:  create mode 100644 android/app/src/main/assets/fonts/EvilIcons.ttf
+:  create mode 100755 android/app/src/main/assets/fonts/Feather.ttf
+:  create mode 100644 android/app/src/main/assets/fonts/FontAwesome.ttf
+:  create mode 100644 android/app/src/main/assets/fonts/FontAwesome5_Brands.ttf
+:  create mode 100644 android/app/src/main/assets/fonts/FontAwesome5_Regular.ttf
+:  create mode 100644 android/app/src/main/assets/fonts/FontAwesome5_Solid.ttf
+:  create mode 100644 android/app/src/main/assets/fonts/Foundation.ttf
+:  create mode 100644 android/app/src/main/assets/fonts/Ionicons.ttf
+:  create mode 100644 android/app/src/main/assets/fonts/MaterialCommunityIcons.ttf
+:  create mode 100644 android/app/src/main/assets/fonts/MaterialIcons.ttf
+:  create mode 100644 android/app/src/main/assets/fonts/Octicons.ttf
+:  create mode 100644 android/app/src/main/assets/fonts/SimpleLineIcons.ttf
+:  create mode 100644 android/app/src/main/assets/fonts/Zocial.ttf
+:  create mode 100644 android/app/src/main/java/com/reactnativestarterkit/MainActivity.java
+:  create mode 100644 android/app/src/main/java/com/reactnativestarterkit/MainApplication.java
+:  create mode 100644 android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+:  create mode 100644 android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+:  create mode 100644 android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+:  create mode 100644 android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+:  create mode 100644 android/app/src/main/res/values/strings.xml
+:  create mode 100644 android/app/src/main/res/values/styles.xml
+:  create mode 100644 android/build.gradle
+:  create mode 100644 android/gradle.properties
+:  create mode 100644 android/gradle/wrapper/gradle-wrapper.jar
+:  create mode 100644 android/gradle/wrapper/gradle-wrapper.properties
+:  create mode 100755 android/gradlew
+:  create mode 100644 android/gradlew.bat
+:  create mode 100644 android/keystores/BUCK
+:  create mode 100644 android/keystores/debug.keystore.properties
+:  create mode 100644 android/settings.gradle
+:  create mode 100644 app.json
+:  create mode 100644 babel.config.js
+:  create mode 100644 dev.org
+:  create mode 100644 index.js
+:  create mode 100644 ios/Podfile
+:  create mode 100644 ios/Podfile.lock
+:  create mode 100644 ios/ReactNativeStarterKit.xcodeproj/project.pbxproj
+:  create mode 100644 ios/ReactNativeStarterKit.xcodeproj/xcshareddata/xcschemes/ReactNativeStarterKit-tvOS.xcscheme
+:  create mode 100644 ios/ReactNativeStarterKit.xcodeproj/xcshareddata/xcschemes/ReactNativeStarterKit.xcscheme
+:  create mode 100644 ios/ReactNativeStarterKit.xcworkspace/contents.xcworkspacedata
+:  create mode 100644 ios/ReactNativeStarterKit.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+:  create mode 100644 ios/ReactNativeStarterKit.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+:  create mode 100644 ios/ReactNativeStarterKit/AppDelegate.h
+:  create mode 100644 ios/ReactNativeStarterKit/AppDelegate.m
+:  create mode 100644 ios/ReactNativeStarterKit/Base.lproj/LaunchScreen.xib
+:  create mode 100644 ios/ReactNativeStarterKit/Images.xcassets/AppIcon.appiconset/Contents.json
+:  create mode 100644 ios/ReactNativeStarterKit/Info.plist
+:  create mode 100644 ios/ReactNativeStarterKit/main.m
+:  create mode 100644 ios/ReactNativeStarterKitTests/Info.plist
+:  create mode 100644 ios/ReactNativeStarterKitTests/ReactNativeStarterKitTests.m
+:  create mode 100644 jest-setup.js
+:  create mode 100644 logo.png
+:  create mode 100644 package.json
+:  create mode 100644 src/components/index.js
+:  create mode 100644 src/components/package.json
+:  create mode 100644 src/configs/index.js
+:  create mode 100644 src/configs/package.json
+:  create mode 100644 src/img/images/logo.png
+:  create mode 100644 src/img/package.json
+:  create mode 100644 src/navigation/Navigation.js
+:  create mode 100644 src/navigation/Screens.js
+:  create mode 100644 src/navigation/index.js
+:  create mode 100644 src/navigation/package.json
+:  create mode 100644 src/navigation/registerScreens.js
+:  create mode 100644 src/redux/Provider/index.js
+:  create mode 100644 src/redux/Provider/provider.js
+:  create mode 100644 src/redux/index.js
+:  create mode 100644 src/redux/modules/data/actions.js
+:  create mode 100644 src/redux/modules/data/connectData.js
+:  create mode 100644 src/redux/modules/data/index.js
+:  create mode 100644 src/redux/modules/data/reducer.js
+:  create mode 100644 src/redux/modules/data/saga.js
+:  create mode 100644 src/redux/modules/index.js
+:  create mode 100644 src/redux/package.json
+:  create mode 100644 src/redux/store/index.js
+:  create mode 100644 src/redux/store/reducers.js
+:  create mode 100644 src/redux/store/sagas.js
+:  create mode 100644 src/redux/store/store.js
+:  create mode 100644 src/screens/DashboardScreen/DashboardScreen.js
+:  create mode 100644 src/screens/LoginScreen/LoginScreen.js
+:  create mode 100644 src/screens/WelcomeScreen/WelcomeScreen.js
+:  create mode 100644 src/screens/WelcomeScreen/__tests__/WelcomeScreen.test.js
+:  create mode 100644 src/screens/WelcomeScreen/__tests__/__snapshots__/WelcomeScreen.test.js.snap
+:  create mode 100644 src/screens/index.js
+:  create mode 100644 src/screens/package.json
+:  create mode 100644 src/services/index.js
+:  create mode 100644 src/services/package.json
+:  create mode 100644 src/services/restService.js
+:  create mode 100644 yarn.lock
+```
+
+Time to build a Launching screen, Login Screen, and Dashboard
+
+
+2019-01-06T12:00:07+08:00
+### Working on the navigator.  Replacing navigator setup that came with the starter kit with our own, using the 3 screens that came in the stater kit
+
+```bash
+git status
+```
+```result
+: On branch master
+: Changes not staged for commit:
+:   (use "git add <file>..." to update what will be committed)
+:   (use "git checkout -- <file>..." to discard changes in working directory)
+:
+: 	modified:   dev.org
+:
+: no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+```bash
+git checkout -b nav-setup
+```
+```result
+! Switched to a new branch 'nav-setup'
+: M	dev.org
+```
+
+Have Welcome page, that links to login (for now, until we detect auth).  From there user can follow link to dashboard (again, for now).  From the dashboard, they can go back to unathenticated experience.  This is working through using two app roots, and pushing them via setRoot of Navigator.

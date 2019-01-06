@@ -7,7 +7,7 @@ import {
   Text,
   TouchableOpacity
 } from 'react-native';
-import { pushTutorialScreen } from 'AppNavigator';
+import { pushUnauthenticated } from 'LearnNavigation';
 
 const styles = StyleSheet.create({
   flex: {
@@ -28,7 +28,7 @@ class DashboardScreen extends PureComponent {
   render() {
     return (
       <View style={styles.flex}>
-        <TouchableOpacity onPress={() => pushTutorialScreen()}>
+        <TouchableOpacity onPress={() => pushUnauthenticated()}>
           <Text>Click here to back to login page!</Text>
         </TouchableOpacity>
       </View>
