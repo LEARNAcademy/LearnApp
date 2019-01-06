@@ -1,11 +1,12 @@
 // @flow
 
 import React, { PureComponent } from 'react';
+import { Navigation } from 'react-native-navigation';
 import {
   StyleSheet,
   View,
   Text,
-  Image
+  Image,
 } from 'react-native';
 import { Button } from 'react-native-elements';
 
@@ -40,6 +41,20 @@ const styles = StyleSheet.create({
 class WelcomeScreen extends PureComponent {
 
   handleGetStartAction = () => {
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: 'Learn.Login',
+        passProps: {
+        },
+        options: {
+          topBar: {
+            title: {
+              text: 'Pushed screen title'
+            }
+          }
+        }
+      }
+    });
 
   };
 
@@ -60,7 +75,7 @@ class WelcomeScreen extends PureComponent {
           titleStyle={styles.buttonTitle}
         />
       </View>
-    );
+    )
   }
 }
 

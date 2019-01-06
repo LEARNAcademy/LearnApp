@@ -1,4 +1,4 @@
-import { Navigation } from 'react-native-navigation';
-import { pushTutorialScreen } from 'AppNavigator';
+import { Navigation } from 'react-native-navigation'
+import { pushUnauthenticated } from 'LearnNavigation'
 
-Navigation.events().registerAppLaunchedListener(() => pushTutorialScreen());
+Navigation.events().registerAppLaunchedListener(() => pushUnauthenticated())

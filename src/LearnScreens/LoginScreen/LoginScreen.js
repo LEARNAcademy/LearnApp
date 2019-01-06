@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { connectData } from 'AppRedux';
 import { apiConfig } from 'AppConfig';
-import { pushDashboard } from 'AppNavigator';
+import { pushAuthenticated } from 'LearnNavigation';
 
 const styles = StyleSheet.create({
   flex: {
@@ -32,7 +32,7 @@ class LoginScreen extends PureComponent {
   render() {
     return (
       <View style={styles.flex}>
-        <TouchableOpacity onPress={() => pushDashboard()}>
+        <TouchableOpacity onPress={() => pushAuthenticated()}>
           <Text>Click here!</Text>
         </TouchableOpacity>
       </View>
