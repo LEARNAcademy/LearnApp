@@ -1,0 +1,311 @@
+2019-01-05T14:08:00+08:00
+
+- Updated Node, React, ReactNative, and ReactNative CLI globally
+- Generate New LearnApp
+- Add to Git
+
+### Next Steps at this point?
+- [TODO] Add Wix Navigation
+- [TODO] Add Tab bar Nav
+- [TODO] Add Stubbed Login Page
+- [TODO] Add Stubbed Help App
+- [TODO] Add Stubbed Home Page
+- [TODO] Add Firebase
+
+
+- add react-native-navigation from Wix
+[Wix ReactNativeNavigation](https://wix.github.io/react-native-navigation/#/)
+```bash
+yarn add react-native-navigation
+```
+```result
+: yarn add v1.12.3
+: info No lockfile found.
+: [1/4] Resolving packages...
+: [2/4] Fetching packages...
+: [3/4] Linking dependencies...
+! warning " > react-native-navigation@2.5.0" has unmet peer dependency "react@*".
+! error Could not write file "/yarn-error.log": "EACCES: permission denied, open '/yarn-error.log'"
+: info Visit https://yarnpkg.com/en/docs/cli/add for documentation about this command.
+! error An unexpected error occurred: "EACCES: permission denied, mkdir '/node_modules'".
+! warning " > react-native-navigation@2.5.0" has unmet peer dependency "react-native@*".
+```
+
+#### Organization CodeBlock execution Update
+
+Ok, that isn't executing where I expect, so where
+```shell
+pwd
+```
+```result
+: /
+```
+Lame, Can we make it relative to the location of the org file running it?
+
+Fixed it in Atom's Organization package:
+https://github.com/LEARNAcademy/organized/pull/1
+
+```shell
+pwd
+```
+```result
+: /Users/mclark/Projects/notch8/learn/classroom-app/LearnApp
+```
+
+Ahhh, much better. What about bash?
+
+```bash
+pwd
+```
+```result
+: /Users/mclark/Projects/notch8/learn/classroom-app/LearnApp
+```
+
+### Back to nav
+[react-native-navigation](https://github.com/wix/react-native-navigation)
+```bash
+yarn add react-native-navigation
+```
+```result
+: yarn add v1.12.3
+: [1/4] Resolving packages...
+: [2/4] Fetching packages...
+: [3/4] Linking dependencies...
+! warning "metro-react-native-babel-preset > @babel/plugin-proposal-class-properties@7.2.3" has unmet peer dependency "@babel/core@^7.0.0-0".
+: [4/4] Building fresh packages...
+: success Saved lockfile.
+: success Saved 4 new dependencies.
+: info Direct dependencies
+: └─ react-native-navigation@2.5.0
+: info All dependencies
+: ├─ hoist-non-react-statics@3.2.1
+: ├─ react-lifecycles-compat@2.0.0
+: ├─ react-native-navigation@2.5.0
+: └─ tslib@1.9.3
+: Done in 4.76s.
+! warning "metro-react-native-babel-preset > @babel/plugin-proposal-nullish-coalescing-operator@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-proposal-object-rest-spread@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-proposal-optional-catch-binding@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-proposal-optional-chaining@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-flow-strip-types@7.2.3" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-modules-commonjs@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-arrow-functions@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-block-scoping@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-classes@7.2.2" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-computed-properties@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-destructuring@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-for-of@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-function-name@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-literals@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-parameters@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-react-display-name@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-react-jsx@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-shorthand-properties@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-spread@7.2.2" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-template-literals@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-proposal-export-default-from@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-syntax-dynamic-import@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-syntax-export-default-from@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-exponentiation-operator@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-object-assign@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-react-jsx-source@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-regenerator@7.0.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-runtime@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-sticky-regex@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-typescript@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning "metro-react-native-babel-preset > @babel/plugin-transform-unicode-regex@7.2.0" has unmet peer dependency "@babel/core@^7.0.0-0".
+! warning " > babel-jest@23.6.0" has unmet peer dependency "babel-core@^6.0.0 || ^7.0.0-0".
+! warning " > metro-react-native-babel-preset@0.51.1" has unmet peer dependency "@babel/core@*".
+```
+
+```bash
+yarn add @babel/core
+```
+```result
+: yarn add v1.12.3
+: [1/4] Resolving packages...
+: [2/4] Fetching packages...
+! warning Pattern ["@babel/core@^7.2.2"] is trying to unpack in the same destination "/Users/mclark/Library/Caches/Yarn/v4/npm-@babel-core-7.2.2-07adba6dde27bb5ad8d8672f15fde3e08184a687/node_modules/@babel/core" as pattern ["@babel/core@^7.0.0","@babel/core@^7.0.0","@babel/core@^7.0.0"]. This could result in non-deterministic behavior, skipping.;
+: [3/4] Linking dependencies...
+! warning " > babel-jest@23.6.0" has unmet peer dependency "babel-core@^6.0.0 || ^7.0.0-0".
+: [4/4] Building fresh packages...
+: success Saved lockfile.
+: success Saved 1 new dependency.
+: info Direct dependencies
+: └─ @babel/core@7.2.2
+: info All dependencies
+: └─ @babel/core@7.2.2
+: Done in 1.90s.
+```
+
+```bash
+git status
+```
+```result
+: On branch master
+: Changes not staged for commit:
+:   (use "git add <file>..." to update what will be committed)
+:   (use "git checkout -- <file>..." to discard changes in working directory)
+:
+: 	modified:   package.json
+: 	modified:   yarn.lock
+:
+: Untracked files:
+:   (use "git add <file>..." to include in what will be committed)
+:
+: 	dev.org
+:
+: no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+```bash
+git add .
+git commit -m "adds react-native-navigation"
+```
+```result
+: [master 58f471b] adds react-native-navigation
+:  3 files changed, 174 insertions(+), 6 deletions(-)
+:  create mode 100644 dev.org
+```
+
+```bash
+git checkout -b setup-wix-Navigation
+```
+```result
+! Switched to a new branch 'setup-wix-Navigation'
+```
+
+Update XCode for wix-navigation
+- add Library from node module
+- Link binary in Build Phase
+- AppDelegate.m
+
+Android
+- settings.gradle
+- android/build.gradle
+- android/app/build.gradle
+- MainActivity.java
+- MainApplication.Java
+
+```bash
+git status
+```
+```result
+: On branch setup-wix-Navigation
+: Changes not staged for commit:
+:   (use "git add <file>..." to update what will be committed)
+:   (use "git checkout -- <file>..." to discard changes in working directory)
+:
+: 	modified:   android/app/build.gradle
+: 	modified:   android/app/src/main/java/com/learnapp/MainActivity.java
+: 	modified:   android/app/src/main/java/com/learnapp/MainApplication.java
+: 	modified:   android/build.gradle
+: 	modified:   android/settings.gradle
+: 	modified:   dev.org
+: 	modified:   ios/LearnApp.xcodeproj/project.pbxproj
+: 	modified:   ios/LearnApp/AppDelegate.m
+: 	modified:   package.json
+:
+: no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+```bash
+git add .
+git commit -m 'configuration for IOS and Android react-native-navigation'
+```
+```result
+: [setup-wix-Navigation 299d9ae] configuration for IOS and Android react-native-navigation
+:  9 files changed, 161 insertions(+), 73 deletions(-)
+:  rewrite ios/LearnApp/AppDelegate.m (67%)
+```
+
+### Add Basic tab navigation
+[Wix docs](https://wix.github.io/react-native-navigation/#/docs/Usage)
+
+### Switching to starter kit
+There is a starter kit with same version of react native, and alrady rolled in version of sagas, jest, and RN Elements.  Exactly what I want, so bailed on home roll
+[RN Navigation starter kit](https://github.com/wagng/react-native-navigation-redux-starter-kit)
+
+```bash
+git clone git@github.com:wagng/react-native-navigation-redux-starter-kit.git
+```
+```result
+! Cloning into 'react-native-navigation-redux-starter-kit'...
+```
+
+```bash
+cd react-native-navigation-redux-starter-kit
+rm -rf .git
+git init .
+git commit -am "Initial commit"
+```
+```result
+: Initialized empty Git repository in /Users/mclark/Projects/notch8/learn/classroom-app/react-native-navigation-redux-starter-kit/.git/
+: On branch master
+:
+: Initial commit
+:
+: Untracked files:
+: 	.buckconfig
+: 	.circleci/
+: 	.eslintignore
+: 	.eslintrc
+: 	.flowconfig
+: 	.gitattributes
+: 	.gitignore
+: 	.watchmanconfig
+: 	LICENSE
+: 	README.md
+: 	__mocks__/
+: 	android/
+: 	app.json
+: 	babel.config.js
+: 	index.js
+: 	ios/
+: 	jest-setup.js
+: 	logo.png
+: 	package.json
+: 	src/
+: 	yarn.lock
+:
+: nothing added to commit but untracked files present
+```
+```bash
+ls
+```
+```result
+: LearnApp
+: dev.org
+: mobile-app
+: react-native-navigation-redux-starter-kit
+: testing.org
+```
+
+```bash
+mv react-native-navigation-redux-starter-kit LearnApp
+mv dev.org LearnApp/
+cd LearnApp
+```
+
+```bash
+yarn
+```
+```result
+: yarn install v1.12.3
+: [1/4] Resolving packages...
+: [2/4] Fetching packages...
+: [3/4] Linking dependencies...
+! warning " > babel-jest@23.6.0" has unmet peer dependency "babel-core@^6.0.0 || ^7.0.0-0".
+: [4/4] Building fresh packages...
+: Done in 2.12s.
+```
+
+```bash
+cd ios && pod install
+```
+```result
+: [!] No `Podfile' found in the project directory.
+```
+
+- Run Android to verify its running
+- Dir structure is a mess, my fault.  fixing
