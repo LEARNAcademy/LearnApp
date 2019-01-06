@@ -623,3 +623,84 @@ git checkout -b nav-setup
 ```
 
 Have Welcome page, that links to login (for now, until we detect auth).  From there user can follow link to dashboard (again, for now).  From the dashboard, they can go back to unathenticated experience.  This is working through using two app roots, and pushing them via setRoot of Navigator.
+
+```bash
+git status
+```
+```result
+: On branch nav-setup
+: Changes not staged for commit:
+:   (use "git add/rm <file>..." to update what will be committed)
+:   (use "git checkout -- <file>..." to discard changes in working directory)
+:
+: 	modified:   dev.org
+: 	modified:   index.js
+: 	deleted:    src/navigation/Navigation.js
+: 	deleted:    src/navigation/Screens.js
+: 	deleted:    src/navigation/index.js
+: 	deleted:    src/navigation/package.json
+: 	deleted:    src/navigation/registerScreens.js
+: 	deleted:    src/screens/DashboardScreen/DashboardScreen.js
+: 	deleted:    src/screens/LoginScreen/LoginScreen.js
+: 	deleted:    src/screens/WelcomeScreen/WelcomeScreen.js
+: 	deleted:    src/screens/WelcomeScreen/__tests__/WelcomeScreen.test.js
+: 	deleted:    src/screens/WelcomeScreen/__tests__/__snapshots__/WelcomeScreen.test.js.snap
+: 	deleted:    src/screens/index.js
+: 	deleted:    src/screens/package.json
+:
+: Untracked files:
+:   (use "git add <file>..." to include in what will be committed)
+:
+: 	src/LearnNavigation/
+: 	src/LearnScreens/
+:
+: no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+```bash
+git add .
+git commit -m 'organizes auth/unauth navigation'
+```
+```result
+: [nav-setup c346e39] organizes auth/unauth navigation
+:  19 files changed, 458 insertions(+), 99 deletions(-)
+:  rename src/{navigation/Navigation.js => LearnNavigation/Authenticated.js} (52%)
+:  create mode 100644 src/LearnNavigation/Screens.js
+:  create mode 100644 src/LearnNavigation/Unauthenticated.js
+:  create mode 100644 src/LearnNavigation/index.js
+:  create mode 100644 src/LearnNavigation/package.json
+:  rename src/{navigation => LearnNavigation}/registerScreens.js (85%)
+:  rename src/{screens => LearnScreens}/DashboardScreen/DashboardScreen.js (82%)
+:  rename src/{screens => LearnScreens}/LoginScreen/LoginScreen.js (87%)
+:  rename src/{screens => LearnScreens}/WelcomeScreen/WelcomeScreen.js (77%)
+:  rename src/{screens => LearnScreens}/WelcomeScreen/__tests__/WelcomeScreen.test.js (100%)
+:  rename src/{screens => LearnScreens}/WelcomeScreen/__tests__/__snapshots__/WelcomeScreen.test.js.snap (100%)
+:  rename src/{screens => LearnScreens}/index.js (100%)
+:  create mode 100644 src/LearnScreens/package.json
+:  delete mode 100644 src/navigation/Screens.js
+:  delete mode 100644 src/navigation/index.js
+:  delete mode 100644 src/navigation/package.json
+:  delete mode 100644 src/screens/package.json
+```
+
+```bash
+git remote add origin git@github.com:LEARNAcademy/LearnApp.git
+git checkout master
+git push origin master
+git checkout nav-setup
+git push origin nav-setup
+```
+```result
+! Switched to branch 'master'
+! To github.com:LEARNAcademy/LearnApp.git
+! Switched to branch 'nav-setup'
+! remote:
+! To github.com:LEARNAcademy/LearnApp.git
+!  * [new branch]      nav-setup -> nav-setup
+! remote: Create a pull request for 'nav-setup' on GitHub by visiting:
+! remote:      https://github.com/LEARNAcademy/LearnApp/pull/new/nav-setup
+! remote:
+!  * [new branch]      master -> master
+```
+
+[PR](https://github.com/LEARNAcademy/LearnApp/pull/1)
