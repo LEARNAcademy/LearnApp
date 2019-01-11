@@ -1,4 +1,4 @@
-package com.reactnativestarterkit;
+package com.learnacademy.mobile;
 
 import com.reactnativenavigation.NavigationActivity;
 
