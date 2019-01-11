@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "785243589025",
-    "firebase_url": "https://reactnativefirebase-8329a.firebaseio.com",
-    "project_id": "reactnativefirebase-8329a",
-    "storage_bucket": "reactnativefirebase-8329a.appspot.com"
+    "project_number": "506740435698",
+    "firebase_url": "https://learn-app-44986.firebaseio.com",
+    "project_id": "learn-app-44986",
+    "storage_bucket": "learn-app-44986.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:785243589025:android:780708c7fa51c459",
+        "mobilesdk_app_id": "1:506740435698:android:2b09d4e9cecb688a",
         "android_client_info": {
-          "package_name": "com.david.react.starterkit"
+          "package_name": "com.learnacademy.mobile"
         }
       },
       "oauth_client": [
         {
-          "client_id": "785243589025-37ot8mjll94q46poinhtf3efblk4e1bs.apps.googleusercontent.com",
+          "client_id": "506740435698-v059mivk28nrfgonajmce9tacbmld7m3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBQLsn29lAQxj7IQWr2tru7Ir4_AP1DWFw"
+          "current_key": "AIzaSyC4BviPHhAOphr8_eOX5nnsa5DQ3yhnbnw"
         }
       ],
       "services": {

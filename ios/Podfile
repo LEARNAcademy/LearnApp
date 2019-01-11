@@ -7,4 +7,11 @@ target 'ReactNativeStarterKit' do
 
   # Pods for ReactNativeStarterKit
 
+  pod 'Firebase/Core'
+
+  target 'ReactNativeStarterKitTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
 end
