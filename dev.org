@@ -704,3 +704,110 @@ git push origin nav-setup
 ```
 
 [PR](https://github.com/LEARNAcademy/LearnApp/pull/1)
+
+### IOS Firebase config
+
+Follow the [Guide](https://rnfirebase.io/docs/v5.x.x/installation/initial-setup).  Went with cocoapods
+
+```bash
+git status
+```
+```result
+: On branch firebase-auth
+: Changes to be committed:
+:   (use "git reset HEAD <file>..." to unstage)
+:
+: 	new file:   ios/GoogleService-Info.plist
+:
+: Changes not staged for commit:
+:   (use "git add <file>..." to update what will be committed)
+:   (use "git checkout -- <file>..." to discard changes in working directory)
+:
+: 	modified:   android/app/build.gradle
+: 	modified:   android/app/src/main/java/com/reactnativestarterkit/MainApplication.java
+: 	modified:   android/settings.gradle
+: 	modified:   ios/Podfile
+: 	modified:   ios/Podfile.lock
+: 	modified:   ios/ReactNativeStarterKit.xcodeproj/project.pbxproj
+: 	modified:   ios/ReactNativeStarterKit/AppDelegate.m
+: 	modified:   ios/ReactNativeStarterKit/Info.plist
+:
+```
+
+Committed the ios files.  Android is failing to build though.  Manually merging the rename branch to master, and master into firebase-auth.  Need to look closer at the cherry-picking.  That may not have worked how I thought.
+
+```bash
+git status
+```
+```result
+: On branch firebase-auth
+: Changes not staged for commit:
+:   (use "git add <file>..." to update what will be committed)
+:   (use "git checkout -- <file>..." to discard changes in working directory)
+:
+: 	modified:   android/app/build.gradle
+: 	modified:   android/app/src/main/AndroidManifest.xml
+: 	modified:   android/app/src/main/java/com/learnacademy/mobile/MainApplication.java
+: 	modified:   android/build.gradle
+: 	modified:   android/gradle/wrapper/gradle-wrapper.properties
+: 	modified:   android/settings.gradle
+:
+: no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+Great, Android and IOS are up and running with firebase and react-native-navigation.  Time to move on to actual auth
+
+```bash
+git add .
+git commit -m "updates android build to latest gradle"
+git push origin firebase-auth
+```
+```result
+: [firebase-auth 1932ef0] updates android build to latest gradle
+! remote:
+! To github.com:LEARNAcademy/LearnApp.git
+!  * [new branch]      firebase-auth -> firebase-auth
+! remote: Create a pull request for 'firebase-auth' on GitHub by visiting:
+! remote:      https://github.com/LEARNAcademy/LearnApp/pull/new/firebase-auth
+! remote:
+:  6 files changed, 10 insertions(+), 7 deletions(-)
+```
+
+[PR](https://github.com/LEARNAcademy/LearnApp/pull/3)
+
+```bash
+git checkout master
+git pull origin master
+```
+```result
+! Switched to branch 'master'
+! From github.com:LEARNAcademy/LearnApp
+!    d7d50a7..669a590  master     -> origin/master
+: Updating d7d50a7..669a590
+:  android/app/build.gradle                           |  6 +-
+:  android/app/google-services.json                   | 16 ++--
+:  android/app/src/main/AndroidManifest.xml           |  4 +-
+:  .../com/learnacademy/mobile/MainApplication.java   |  2 +
+:  android/build.gradle                               |  3 +-
+:  android/gradle/wrapper/gradle-wrapper.properties   |  3 +-
+:  android/settings.gradle                            |  4 +
+:  ios/GoogleService-Info.plist                       | 40 +++++++++
+:  ios/Podfile                                        |  7 ++
+:  ios/Podfile.lock                                   | 75 ++++++++++++++++-
+:  .../project.pbxproj                                | 95 +++++++++++++++++++++-
+:  ios/ReactNativeStarterKit/AppDelegate.m            |  6 +-
+:  ios/ReactNativeStarterKit/Info.plist               |  2 +-
+:  package.json                                       |  1 +
+:  yarn.lock                                          | 13 +++
+:  15 files changed, 257 insertions(+), 20 deletions(-)
+:  create mode 100644 ios/GoogleService-Info.plist
+: Fast-forward
+!  * branch            master     -> FETCH_HEAD
+```
+
+```bash
+git checkout -b firebase-auth
+```
+```result
+! Switched to a new branch 'firebase-auth'
+```
