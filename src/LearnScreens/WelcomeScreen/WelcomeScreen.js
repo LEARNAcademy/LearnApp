@@ -8,7 +8,8 @@ import {
   Text,
   Image,
 } from 'react-native';
-import { Button } from 'react-native-elements';
+import { Button } from 'react-native-elements'
+import firebase from 'react-native-firebase'
 
 const styles = StyleSheet.create({
   flex: {
@@ -39,8 +40,19 @@ const styles = StyleSheet.create({
 });
 
 class WelcomeScreen extends PureComponent {
+  componentDidMount() {
+    this.authSubscription = firebase.auth().onAuthStateChanged((user) => {
+      this.resolveUserState()
+    });
+  }
 
-  handleGetStartAction = () => {
+  /*
+   * Stop Listening or auth state changes
+   */
+  componentWillUnmount() {
+    this.authSubscription();
+  }
+  resolveUserState = () => {
     Navigation.push(this.props.componentId, {
       component: {
         name: 'Learn.Login',
@@ -68,12 +80,6 @@ class WelcomeScreen extends PureComponent {
         <Text style={styles.logoTitle}>
           {'Welcome to RNN v2 Starter Kit!'}
         </Text>
-        <Button
-          onPress={this.handleGetStartAction}
-          title={'Get Started'}
-          buttonStyle={styles.button}
-          titleStyle={styles.buttonTitle}
-        />
       </View>
     )
   }
