@@ -17,12 +17,16 @@ import VerticalCenter from '../../components/layout/VerticalCenter'
 
 class PhoneAuthScreen extends Component {
   phoneUpdated = (value)=>{
+    console.log(this.props)
     const { signInWithPhoneUpdate } = this.props
     console.log(signInWithPhoneUpdate)
     signInWithPhoneUpdate(value)
 
   }
   render() {
+    const { auth } = this.props
+    const { phoneSignInForm } = auth
+    const { number } = phoneSignInForm
     return(
       <View style={styles.container}>
         <VerticalCenter centered >
@@ -32,6 +36,7 @@ class PhoneAuthScreen extends Component {
           <FormInput
             placeholder="Phone Number"
             onChangeText={this.phoneUpdated}
+            value={ number }
           >
           </FormInput>
         </VerticalCenter>

@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import { fetchAuthActionCreators } from './actions';
 
-function mapStateToProps({ data }) {
+function mapStateToProps({ auth }) {
   return {
-    data
+    auth
   };
 }
 
