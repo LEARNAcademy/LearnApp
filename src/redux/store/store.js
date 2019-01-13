@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import { compact } from 'lodash';
 import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
-// import { createLogger } from 'redux-logger';
+import { createLogger } from 'redux-logger';
 
 // import { composeWithDevTools } from 'remote-redux-devtools';
 
@@ -18,7 +18,7 @@ export default function initializeStore() {
   const middlewares = compact([
     thunk.withExtraArgument(),
     sagaMiddleware,
-    // __DEV__ ? createLogger() : null
+    __DEV__ ? createLogger() : null
   ]);
 
   const debuggWrapper = data => data;
