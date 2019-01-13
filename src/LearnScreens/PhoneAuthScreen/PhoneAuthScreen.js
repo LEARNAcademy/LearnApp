@@ -4,18 +4,36 @@ import {
   Text,
   View,
 } from 'react-native'
+import {
+  FormInput,
+  FormLabel,
+  FormValidationMessage
+} from 'react-native-elements'
+
+import { connectAuth } from 'AppRedux';
 
 import Theme from '../../styles/Theme'
 import VerticalCenter from '../../components/layout/VerticalCenter'
 
-export default class PhoneAuthScreen extends Component {
+class PhoneAuthScreen extends Component {
+  phoneUpdated = (value)=>{
+    const { signInWithPhoneUpdate } = this.props
+    console.log(signInWithPhoneUpdate)
+    signInWithPhoneUpdate(value)
+
+  }
   render() {
     return(
       <View style={styles.container}>
         <VerticalCenter centered >
-          <Text>
-            Login with Phone
-          </Text>
+          <FormLabel>
+            Where can we Text you an Invite Code?
+          </FormLabel>
+          <FormInput
+            placeholder="Phone Number"
+            onChangeText={this.phoneUpdated}
+          >
+          </FormInput>
         </VerticalCenter>
       </View>
     )
@@ -28,3 +46,5 @@ const styles = StyleSheet.create({
     height: '100%',
   }
 })
+
+export default connectAuth()(PhoneAuthScreen)
