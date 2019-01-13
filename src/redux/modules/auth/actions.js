@@ -11,6 +11,7 @@ export const SIGN_IN_WITH_PHONE_SUBMIT = 'auth/SIGN_IN_WITH_PHONE_SUBMIT'
 export const SIGN_IN_WITH_PHONE_SUCCESS = 'auth/SIGN_IN_WITH_PHONE_SUCCESS'
 export const SIGN_IN_WITH_PHONE_UPDATE = 'auth/SIGN_IN_WITH_PHONE_UPDATE'
 export const SIGN_IN_WITH_PHONE_RESET = 'auth/SIGN_IN_WITH_PHONE_RESET'
+export const SIGN_OUT = 'auth/SIGN_OUT'
 
 export const fetchAuthActionCreators = {
   signInWithPhoneCodeFail: createAction(SIGN_IN_WITH_PHONE_CODE_FAIL),
@@ -22,4 +23,5 @@ export const fetchAuthActionCreators = {
   signInWithPhoneSuccess: createAction(SIGN_IN_WITH_PHONE_SUCCESS),
   signInWithPhoneUpdate: createAction(SIGN_IN_WITH_PHONE_UPDATE),
   signInWithPhoneReset: createAction(SIGN_IN_WITH_PHONE_RESET),
+  signOut: createAction(SIGN_OUT),
 }
