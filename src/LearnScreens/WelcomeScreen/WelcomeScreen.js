@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { Button } from 'react-native-elements'
 import firebase from 'react-native-firebase'
+import { pushAuthenticated } from 'LearnNavigation'
 
 const styles = StyleSheet.create({
   flex: {
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
 class WelcomeScreen extends PureComponent {
   componentDidMount() {
     this.authSubscription = firebase.auth().onAuthStateChanged((user) => {
-      this.resolveUserState()
+      this.resolveUserState(user)
     });
   }
 
@@ -52,22 +53,26 @@ class WelcomeScreen extends PureComponent {
   componentWillUnmount() {
     this.authSubscription();
   }
-  resolveUserState = () => {
-    Navigation.push(this.props.componentId, {
-      component: {
-        name: 'Learn.Login',
-        passProps: {
-        },
-        options: {
-          topBar: {
-            title: {
-              text: 'Pushed screen title'
+  resolveUserState = (user) => {
+    console.log("USER", user)
+    if(user){
+      pushAuthenticated()
+    }else{
+      Navigation.push(this.props.componentId, {
+        component: {
+          name: 'Learn.Login',
+          passProps: {
+          },
+          options: {
+            topBar: {
+              title: {
+                text: 'Pushed screen title'
+              }
             }
           }
         }
-      }
-    });
-
+      })
+    }
   };
 
   render() {

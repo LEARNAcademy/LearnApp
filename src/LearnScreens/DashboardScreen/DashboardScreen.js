@@ -8,6 +8,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { pushUnauthenticated } from 'LearnNavigation';
+import firebase from 'react-native-firebase'
 
 const styles = StyleSheet.create({
   flex: {
@@ -21,14 +22,17 @@ class DashboardScreen extends PureComponent {
 
   constructor(props) {
     super(props);
-
     this.state = {};
+  }
+
+  signOut = ()=>{
+    firebase.auth().signOut();
   }
 
   render() {
     return (
       <View style={styles.flex}>
-        <TouchableOpacity onPress={() => pushUnauthenticated()}>
+        <TouchableOpacity onPress={this.signOut}>
           <Text>Click here to back to login page!</Text>
         </TouchableOpacity>
       </View>
