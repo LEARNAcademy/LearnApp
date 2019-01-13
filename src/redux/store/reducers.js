@@ -4,7 +4,8 @@ import { persistCombineReducers } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import {
-  data
+  auth,
+  data,
 } from '../modules';
 
 const config = {
@@ -13,6 +14,7 @@ const config = {
 };
 
 const appReducer = persistCombineReducers(config, {
+  auth,
   data,
 });
 

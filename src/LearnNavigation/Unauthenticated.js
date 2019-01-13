@@ -2,6 +2,7 @@ import { Navigation } from 'react-native-navigation';
 
 import {
   LOGIN_SCREEN,
+  PHONE_AUTH_SCREEN,
   WELCOME_SCREEN,
 } from './Screens';
 
@@ -18,13 +19,17 @@ export function pushUnauthenticated() {
         children: [
           {
             component: {
-              name: LOGIN_SCREEN
+              name: LOGIN_SCREEN,
             }
           },
-
           {
             component: {
-              name: WELCOME_SCREEN
+              name: PHONE_AUTH_SCREEN,
+            }
+          },
+          {
+            component: {
+              name: WELCOME_SCREEN,
             }
           },
         ]

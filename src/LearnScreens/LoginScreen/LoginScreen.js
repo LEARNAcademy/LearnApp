@@ -8,6 +8,7 @@ import {
   Text,
   TouchableOpacity
 } from 'react-native';
+import { Navigation } from 'react-native-navigation'
 import {
   Button,
   Icon,
@@ -15,6 +16,7 @@ import {
 import { connectData } from 'AppRedux';
 import { apiConfig } from 'AppConfig';
 import { pushAuthenticated } from 'LearnNavigation';
+import { PHONE_AUTH_SCREEN } from '../../LearnNavigation/Screens'
 
 const styles = StyleSheet.create({
   flex: {
@@ -33,56 +35,21 @@ class LoginScreen extends PureComponent {
     fetchData({ url: apiConfig.api_endpoint, method: 'GET', params: null });
   }
 
-  onLoginOrRegister = () => {
-  const { phoneNumber } = this.state;
-  firebase.auth().signInWithPhoneNumber(phoneNumber)
-    .then((confirmResult) => {
-      // This means that the SMS has been sent to the user
-      // You need to:
-      //   1) Save the `confirmResult` object to use later
-      this.setState({ confirmResult });
-      //   2) Hide the phone number form
-      //   3) Show the verification code form
+  launchSmsLogin = () => {
+    const { navigator } = this.props
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: PHONE_AUTH_SCREEN,
+      },
     })
-    .catch((error) => {
-      const { code, message } = error;
-      // For details of error codes, see the docs
-      // The message contains the default Firebase string
-      // representation of the error
-    });
-  }
-  onVerificationCode = () => {
-    const { confirmResult, verificationCode } = this.state;
-    confirmResult.confirm(verificationCode)
-      .then((user) => {
-        // If you need to do anything with the user, do it here
-        // The user will be logged in automatically by the
-        // `onAuthStateChanged` listener we set up in App.js earlier
-      })
-      .catch((error) => {
-        const { code, message } = error;
-        // For details of error codes, see the docs
-        // The message contains the default Firebase string
-        // representation of the error
-      });
+
   }
 
   render() {
     return (
       <View style={styles.flex}>
-        <Icon
-            name="comment"
-            type='font-awesome'
-            size={50}
-            color='red'
-          />
-        <Icon
-            name='github-square'
-            type='font-awesome'
-            size={50}
-            color='red'
-          />
         <Button
+          onPress={this.launchSmsLogin}
           icon={{
             name: "comment",
             type: 'font-awesome',
