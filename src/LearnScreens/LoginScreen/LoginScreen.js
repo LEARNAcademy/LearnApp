@@ -45,40 +45,6 @@ class LoginScreen extends PureComponent {
 
   }
 
-  onLoginOrRegister = () => {
-  const { phoneNumber } = this.state;
-  firebase.auth().signInWithPhoneNumber(phoneNumber)
-    .then((confirmResult) => {
-      // This means that the SMS has been sent to the user
-      // You need to:
-      //   1) Save the `confirmResult` object to use later
-      this.setState({ confirmResult });
-      //   2) Hide the phone number form
-      //   3) Show the verification code form
-    })
-    .catch((error) => {
-      const { code, message } = error;
-      // For details of error codes, see the docs
-      // The message contains the default Firebase string
-      // representation of the error
-    });
-  }
-  onVerificationCode = () => {
-    const { confirmResult, verificationCode } = this.state;
-    confirmResult.confirm(verificationCode)
-      .then((user) => {
-        // If you need to do anything with the user, do it here
-        // The user will be logged in automatically by the
-        // `onAuthStateChanged` listener we set up in App.js earlier
-      })
-      .catch((error) => {
-        const { code, message } = error;
-        // For details of error codes, see the docs
-        // The message contains the default Firebase string
-        // representation of the error
-      });
-  }
-
   render() {
     return (
       <View style={styles.flex}>
