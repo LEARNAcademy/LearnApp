@@ -16,6 +16,7 @@ import {
   SIGN_IN_WITH_PHONE_SUBMIT,
   SIGN_IN_WITH_PHONE_CODE_SUBMIT,
   SIGN_IN_WITH_PHONE_SUCCESS,
+  SIGN_OUT,
   fetchAuthActionCreators
 } from './actions';
 
@@ -49,9 +50,21 @@ export function* watchPhoneVerificationCodeSubmit() {
   }
 }
 
+export function* asyncSignOut(){
+  yield firebase.auth().signOut();
+}
+
+export function* watchSignOut(){
+  while(true){
+    const action = yield take(SIGN_OUT);
+    yield* asyncSignOut()
+  }
+}
+
 export default function* () {
   yield all([
     fork(watchSignInWithPhoneSubmit),
     fork(watchPhoneVerificationCodeSubmit),
+    fork(watchSignOut),
   ]);
 }

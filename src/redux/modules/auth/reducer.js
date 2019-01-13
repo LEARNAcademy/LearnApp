@@ -6,6 +6,7 @@ import {
   SIGN_IN_WITH_PHONE_RESET,
   SIGN_IN_WITH_PHONE_CODE_UPDATE,
   SIGN_IN_WITH_PHONE_CODE_SUCCESS,
+  SIGN_OUT,
 } from './actions';
 
 
@@ -64,6 +65,12 @@ const { type, payload } = action;
         phoneSignInForm: Object.assign({}, phoneSignInForm, {
           verificationCode: action.payload,
         })
+      }
+    }
+    case SIGN_OUT:{
+      return {
+        ...state,
+        user: null,
       }
     }
     default:

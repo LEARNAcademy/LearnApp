@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { pushUnauthenticated } from 'LearnNavigation';
 import firebase from 'react-native-firebase'
+import { connectAuth } from 'AppRedux';
 
 const styles = StyleSheet.create({
   flex: {
@@ -26,7 +27,8 @@ class DashboardScreen extends PureComponent {
   }
 
   signOut = ()=>{
-    firebase.auth().signOut();
+    const{ signOut } = this.props
+    signOut()
   }
 
   render() {
@@ -40,4 +42,4 @@ class DashboardScreen extends PureComponent {
   }
 }
 
-export default DashboardScreen;
+export default connectAuth()(DashboardScreen)
