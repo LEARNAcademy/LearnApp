@@ -11,34 +11,7 @@ import {
 import { Button } from 'react-native-elements'
 import firebase from 'react-native-firebase'
 import { pushAuthenticated } from 'LearnNavigation'
-
-const styles = StyleSheet.create({
-  flex: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  button: {
-    backgroundColor: '#039893',
-    width: 230,
-    marginTop: 30,
-    borderRadius: 25
-  },
-  buttonTitle: {
-    fontSize: 14,
-    fontWeight: 'bold'
-  },
-  logo: {
-    width: 300,
-    height: 120,
-    resizeMode: 'contain'
-  },
-  logoTitle: {
-    marginTop: 10,
-    fontSize: 16,
-    fontWeight: '500'
-  }
-});
+import Theme from '../../styles/Theme'
 
 class WelcomeScreen extends PureComponent {
   componentDidMount() {
@@ -77,17 +50,22 @@ class WelcomeScreen extends PureComponent {
 
   render() {
     return (
-      <View style={styles.flex}>
+      <View style={styles.container}>
         <Image
-          style={styles.logo}
-          source={require('img/images/logo.png')}
+          source={require('img/student-outline-super-highlight.png')}
+          style={styles.image}
         />
-        <Text style={styles.logoTitle}>
-          {'Welcome to RNN v2 Starter Kit!'}
-        </Text>
       </View>
     )
   }
 }
 
+const styles = StyleSheet.create({
+  container:{
+    backgroundColor: Theme.Colors.darkBackground,
+  },
+  image: {
+    width: '100%'
+  }
+});
 export default WelcomeScreen;
