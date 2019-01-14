@@ -1,4 +1,5 @@
 PODS:
+  - AppAuth (0.92.0)
   - Firebase/Auth (5.15.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.2.0)
@@ -60,6 +61,7 @@ PODS:
   - nanopb/encode (0.3.901)
 
 DEPENDENCIES:
+  - "AppAuth (from `git@github.com:kadikraman/AppAuth-iOS.git`)"
   - Firebase/Auth
   - Firebase/Core
 
@@ -76,7 +78,17 @@ SPEC REPOS:
     - GTMSessionFetcher
     - nanopb
 
+EXTERNAL SOURCES:
+  AppAuth:
+    :git: "git@github.com:kadikraman/AppAuth-iOS.git"
+
+CHECKOUT OPTIONS:
+  AppAuth:
+    :commit: 613e1e77af4b58ef1d0c7b416ecf09547346d388
+    :git: "git@github.com:kadikraman/AppAuth-iOS.git"
+
 SPEC CHECKSUMS:
+  AppAuth: 3f4f1d6d85ad631d0bbf15ffcdc10c447face97a
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseAuth: 02e969ff430e156d99d4cb842d77b806b71ad7bb
@@ -88,6 +100,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: a5c669f006a875eecb95858d06e3b8b500bcbf49
+PODFILE CHECKSUM: aa75f3430fecfc72e37f6522e5cfecef20d845ed
 
 COCOAPODS: 1.5.3

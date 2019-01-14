@@ -151,6 +151,7 @@ configurations.all {
 }
 
 dependencies {
+    compile project(':react-native-app-auth')
     compile project(':react-native-firebase')
     compile project(':react-native-vector-icons')
     implementation fileTree(dir: "libs", include: ["*.jar"])
