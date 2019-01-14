@@ -13,10 +13,14 @@ import {
   Button,
   Icon,
 } from 'react-native-elements'
-import { connectData } from 'AppRedux';
+
+import { connectAuth, connectData } from 'AppRedux';
 import { apiConfig } from 'AppConfig';
 import { pushAuthenticated } from 'LearnNavigation';
 import { PHONE_AUTH_SCREEN } from '../../LearnNavigation/Screens'
+import GithubOauth from '../../components/GithubOauth'
+
+import firebase from 'react-native-firebase'
 
 const styles = StyleSheet.create({
   flex: {
@@ -45,6 +49,12 @@ class LoginScreen extends PureComponent {
 
   }
 
+  onRecieveToken = async (accessToken) => {
+    const{ recieveAccessToken } = this.props
+    recieveAccessToken(accessToken)
+  }
+
+
   render() {
     return (
       <View style={styles.flex}>
@@ -58,14 +68,8 @@ class LoginScreen extends PureComponent {
           }}
           title="SMS Login"
         />
-        <Button
-          icon={{
-            name: 'github-square',
-            type: 'font-awesome',
-            size: 50,
-            color: 'white',
-          }}
-          title="Github Login"
+        <GithubOauth
+          onRecieveToken={this.onRecieveToken}
         />
       </View>
     );
@@ -76,4 +80,4 @@ LoginScreen.propTypes = {
   fetchData: PropTypes.func.isRequired
 };
 
-export default connectData()(LoginScreen);
+export default connectData()(connectAuth()(LoginScreen));
