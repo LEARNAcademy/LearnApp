@@ -9,6 +9,7 @@ target 'ReactNativeStarterKit' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'AppAuth', git: 'git@github.com:kadikraman/AppAuth-iOS.git'
 
   target 'ReactNativeStarterKitTests' do
     inherit! :search_paths
