@@ -3,6 +3,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
+  ImageBackground,
   StyleSheet,
   View,
   Text,
@@ -22,13 +23,8 @@ import GithubOauth from '../../components/GithubOauth'
 
 import firebase from 'react-native-firebase'
 
-const styles = StyleSheet.create({
-  flex: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
+import Theme from '../../styles/Theme'
+
 
 class LoginScreen extends PureComponent {
 
@@ -57,25 +53,49 @@ class LoginScreen extends PureComponent {
 
   render() {
     return (
-      <View style={styles.flex}>
-        <Button
-          onPress={this.launchSmsLogin}
-          icon={{
-            name: "comment",
-            type: 'font-awesome',
-            size: 50,
-            color: 'white',
-          }}
-          title="SMS Login"
-        />
-        <GithubOauth
-          onRecieveToken={this.onRecieveToken}
-        />
+      <View
+        style={styles.container}
+      >
+      <ImageBackground
+        source={require('img/student-outline-super-highlight.png')}
+        style={styles.backgroundImage}
+      >
+        <View style={styles.flex}>
+          <Button
+            onPress={this.launchSmsLogin}
+            icon={{
+              name: "comment",
+              type: 'font-awesome',
+              size: 50,
+              color: 'white',
+            }}
+            title="SMS Login"
+          />
+          <GithubOauth
+            onRecieveToken={this.onRecieveToken}
+          />
+        </View>
+      </ImageBackground>
       </View>
     );
   }
 }
 
+const styles = StyleSheet.create({
+  flex: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  container:{
+    height: '100%',
+    backgroundColor: Theme.Colors.darkBackground,
+  },
+  backgroundImage:{
+    width: '100%',
+    height: '100%',
+  }
+});
 LoginScreen.propTypes = {
   fetchData: PropTypes.func.isRequired
 };
