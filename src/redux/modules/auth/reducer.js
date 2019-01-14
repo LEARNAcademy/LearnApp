@@ -1,6 +1,7 @@
 // @flow
 
 import {
+  RECIEVE_AUTHENTICATED_USER,
   SIGN_IN_WITH_PHONE_SUCCESS,
   SIGN_IN_WITH_PHONE_UPDATE,
   SIGN_IN_WITH_PHONE_RESET,
@@ -65,6 +66,13 @@ const { type, payload } = action;
         phoneSignInForm: Object.assign({}, phoneSignInForm, {
           verificationCode: action.payload,
         })
+      }
+    }
+    case RECIEVE_AUTHENTICATED_USER: {
+      const{ payload } = action
+      return{
+        ...state,
+        user: payload
       }
     }
     case SIGN_OUT:{
